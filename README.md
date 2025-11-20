@@ -44,7 +44,7 @@ docker-compose up
 ### Testing
 Run tests with:
 
-    npx @modelcontextprotocol/inspector node dist/index.js
+    npx @modelcontextprotocol/inspector node dist/server.js
 
 # Connecting a Locally Running MCP to Perplexity
 
