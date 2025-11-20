@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  upstox-mcp-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: upstox
+    environment:
+      UPSTOX_API_KEY: UPSTOX_API_KEY
+      UPSTOX_API_SECRET: UPSTOX_API_SECRET
+      UPSTOX_ACCESS_TOKEN: UPSTOX_ACCESS_TOKEN
+      NODE_ENV: ${NODE_ENV:-production}
+      MCP_ENDPOINT: /mcp    
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./logs:/app/logs
+

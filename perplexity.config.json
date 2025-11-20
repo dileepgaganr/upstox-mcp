@@ -1,0 +1,18 @@
+{
+  "args" : [
+    "exec",
+    "-i",
+    "upstox",
+    "node",
+    "dist/index.js"
+  ],
+  "command" : "docker",
+  "env" : {
+    "UPSTOX_API_KEY" : "UPSTOX_API_KEY",
+    "UPSTOX_API_SECRET" : "UPSTOX_API_SECRET",
+    "UPSTOX_ACCESS_TOKEN" : "UPSTOX_ACCESS_TOKEN",
+    "NODE_ENV" : "production",
+    "NODE_OPTIONS" : "--dns-result-order=ipv4first"
+  },
+  "useBuiltInNode" : true
+}

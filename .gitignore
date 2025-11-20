@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+*.log
+.DS_Store
+.docker-compose_local.yml
+docker-compose_local.yml
+local
+local/
+logs
