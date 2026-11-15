@@ -1,20 +1,17 @@
-version: '3.8'
-
 services:
   upstox-mcp-server:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: upstox
-    environment:
-      UPSTOX_API_KEY: UPSTOX_API_KEY
-      UPSTOX_API_SECRET: UPSTOX_API_SECRET
-      UPSTOX_ACCESS_TOKEN: UPSTOX_ACCESS_TOKEN
-      NODE_ENV: ${NODE_ENV:-production}
-      MCP_ENDPOINT: /mcp    
+    env_file:
+      - .env
+    ports:
+      - "9082:9082"
     restart: unless-stopped
     stdin_open: true
     tty: true
+    init: true       # Reaps orphaned children from docker exec MCP sessions
     volumes:
       - ./logs:/app/logs
-
+      - ./.env:/app/.env

@@ -8,3 +8,6 @@ docker-compose_local.yml
 local
 local/
 logs
+# editor/manual backups
+*.bak-*
+*.pre-*
